@@ -32,9 +32,10 @@ const InputComponent: React.FC<Props> = ({
         autoFocus
         style={{
           fontWeight: "bold",
+          fontFamily: "Time New Romane",
           fontSize: "20px",
           width: "230px",
-          padding: "9px"
+          padding: "8.5px 10px 8.5px",
         }}
         placeholder="price"
         defaultValue={price}

@@ -39,7 +39,15 @@ function App() {
             alt={`images`}
           />
         </div>
-        <div style={{margin: "10px 0 10px 0", fontSize: '20px', fontWeight: 'bold'}}>Áo khoác mùa đông ấm áp</div>
+        <div
+          style={{
+            margin: "10px 0 10px 0",
+            fontSize: "20px",
+            fontWeight: "bold",
+          }}
+        >
+          Áo khoác mùa đông ấm áp
+        </div>
         {isFocus ? (
           <InputComponent
             handleChangePrice={handleChangePrice}
@@ -48,7 +56,15 @@ function App() {
           />
         ) : (
           <div
-            style={{ fontWeight: "bold", fontSize: "24px", marginTop: "25px" }}
+            style={{
+              marginTop: "5px",
+              fontWeight: "bold",
+              fontSize: "20px",
+              width: "230px",
+              padding: "10px",
+              border: "2px solid black",
+              borderRadius: "3px"
+            }}
             onClick={handleFocus}
           >
             $ {price}
