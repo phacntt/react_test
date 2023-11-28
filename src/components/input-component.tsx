@@ -37,6 +37,7 @@ const InputComponent: React.FC<Props> = ({
           width: "230px",
           padding: "8.5px 10px 8.5px",
         }}
+        type="number"
         placeholder="price"
         defaultValue={price}
         onChange={handleOnChangeInput}
