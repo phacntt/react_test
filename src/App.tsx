@@ -1,16 +1,6 @@
-import { useState } from "react";
 import InputComponent from "./components/input-component";
 
 function App() {
-  const [isFocus, setIsFocus] = useState<boolean>(false);
-  const [price, setPrice] = useState<number>(0);
-  const handleFocus = () => {
-    setIsFocus(!isFocus);
-  };
-
-  const handleChangePrice = (value: number) => setPrice(value);
-  const handleChangeFocus = (clause: boolean) => setIsFocus(clause);
-
   return (
     <div
       className="App"
@@ -48,28 +38,7 @@ function App() {
         >
           Áo khoác mùa đông ấm áp
         </div>
-        {isFocus ? (
-          <InputComponent
-            handleChangePrice={handleChangePrice}
-            handleChangeFocus={handleChangeFocus}
-            price={price}
-          />
-        ) : (
-          <div
-            style={{
-              marginTop: "5px",
-              fontWeight: "bold",
-              fontSize: "20px",
-              width: "230px",
-              padding: "10px",
-              border: "2px solid black",
-              borderRadius: "3px"
-            }}
-            onClick={handleFocus}
-          >
-            $ {price}
-          </div>
-        )}
+        <InputComponent />
       </div>
     </div>
   );
