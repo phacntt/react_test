@@ -1,0 +1,55 @@
+.InputComponent {
+  border: 2px solid green;
+  border-radius: 40px;
+  display: flex;
+  padding: 8px 11px;
+}
+
+.field-input {
+  font-weight: bold;
+  font-family: Time New Romane;
+  font-size: 20px;
+  color: green;
+  width: 170px;
+  text-decoration: underline;
+  border: none;
+  border-radius: 40px;
+  padding: 0px 0 0 10px;
+}
+
+.icon-input-border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 10px;
+  border-right: 2px solid black;
+}
+
+.icon-input {
+  font-size: 16px;
+  color: green;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.field-input:focus {
+  border-color: green;
+  outline: none;
+}
+
+.field-input:focus::placeholder {
+  color: green;
+}
+
+.field-input:not(:placeholder-shown) {
+  color: green;
+}
+
+.field-price {
+  font-weight: bold;
+  font-size: 20px;
+  width: 230px;
+  padding: 9px 10px;
+  border: 2px solid black;
+  border-radius: 40px;
+}

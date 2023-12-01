@@ -1,0 +1,35 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 250px;
+}
+
+.card:hover {
+  border-color: blue;
+  box-shadow: 5px 10px gainsboro;
+  cursor: pointer;
+}
+
+.thumbnail {
+  border-radius: 20px;
+  width: 250px;
+  height: 250px;
+}
+
+.title-card {
+  margin: 10px 0 10px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
