@@ -1,6 +1,19 @@
 import InputComponent from './components/input-component'
 import './App.css'
+import { ChangeEvent, useState } from 'react'
+import LabelPrice from './components/lable-price.component'
 function App() {
+  const [price, setprice] = useState('')
+  const [isFocus, setIsFocus] = useState<boolean>(false)
+
+  const handleFocus = () => {
+    setIsFocus(!isFocus)
+  }
+
+  const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
+    setprice(event.target.value)
+  }
+
   return (
     <div className="App">
       <div className="card">
@@ -12,7 +25,15 @@ function App() {
           />
         </div>
         <div className="title-card">Áo khoác mùa đông ấm áp</div>
-        <InputComponent />
+        {isFocus ? (
+          <InputComponent
+            value={price}
+            onChange={onChangeInput}
+            onBlur={handleFocus}
+          />
+        ) : (
+          <LabelPrice onClick={handleFocus} price={price} />
+        )}
       </div>
     </div>
   )

@@ -1,45 +1,30 @@
-import { type ChangeEvent, useState } from 'react'
+import { type ChangeEvent } from 'react'
 import '../css/input-component.css'
-import LabelPrice from './lable-price.component'
 
-const InputComponent: React.FC = () => {
-  const [price, setprice] = useState('')
-  const [isFocus, setIsFocus] = useState<boolean>(false)
+interface Props {
+  value: string
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void
+  onBlur?: () => void
+}
 
-  const handleFocus = () => {
-    setIsFocus(!isFocus)
-  }
-
-  const handleOnChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value.length > 12) return false
-    setprice(e.target.value)
-  }
-
-  const handleOnBlur = (e: any) => {
-    console.log(e.target.value)
-    setIsFocus(!isFocus)
-  }
-
+// eslint-disable-next-line react/prop-types
+const InputComponent: React.FC<Props> = ({ value, onChange, onBlur }) => {
   return (
     <>
-      {isFocus ? (
-        <div className="InputComponent">
-          <div className="icon-input-border">
-            <div className="icon-input">Price</div>
-          </div>
-          <input
-            autoFocus
-            className="field-input"
-            type="number"
-            placeholder="Fill Price"
-            defaultValue={price}
-            onChange={handleOnChangeInput}
-            onBlur={handleOnBlur}
-          />
+      <div className="InputComponent">
+        <div className="icon-input-border">
+          <div className="icon-input">Price</div>
         </div>
-      ) : (
-        <LabelPrice onClick={handleFocus} price={price} />
-      )}
+        <input
+          autoFocus
+          className="field-input"
+          type="number"
+          placeholder="Fill Price"
+          defaultValue={value}
+          onChange={onChange}
+          onBlur={onBlur}
+        />
+      </div>
     </>
   )
 }
