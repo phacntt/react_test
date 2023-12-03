@@ -2,19 +2,22 @@
   border: 2px solid green;
   border-radius: 40px;
   display: flex;
-  padding: 8px 11px;
+  padding: 7px 10px;
+  width: 230px;
 }
 
 .field-input {
   font-weight: bold;
-  font-family: Time New Romane;
   font-size: 20px;
   color: green;
-  width: 170px;
   text-decoration: underline;
   border: none;
+  max-width: 140px;
   border-radius: 40px;
-  padding: 0px 0 0 10px;
+  padding: 0 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .icon-input-border {
@@ -49,7 +52,7 @@
   font-weight: bold;
   font-size: 20px;
   width: 230px;
-  padding: 9px 10px;
+  padding: 7px 10px;
   border: 2px solid black;
   border-radius: 40px;
 }

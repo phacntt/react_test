@@ -1,5 +1,6 @@
 import { type ChangeEvent, useState } from 'react'
 import '../css/input-component.css'
+import LabelPrice from './lable-price.component'
 
 const InputComponent: React.FC = () => {
   const [price, setprice] = useState('')
@@ -10,21 +11,19 @@ const InputComponent: React.FC = () => {
   }
 
   const handleOnChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
-    const numericValue = e.target.value.replace(/[^0-9.]/g, '')
-    const formattedValue = parseFloat(numericValue).toLocaleString('en-US', {
-      maximumFractionDigits: 3,
-    })
-    setprice(formattedValue)
+    if (e.target.value.length > 12) return false
+    setprice(e.target.value)
   }
 
-  const handleOnBlur = () => {
+  const handleOnBlur = (e: any) => {
+    console.log(e.target.value)
     setIsFocus(!isFocus)
   }
 
   return (
     <>
       {isFocus ? (
-        <div className="InputComponent" onBlur={handleOnBlur}>
+        <div className="InputComponent">
           <div className="icon-input-border">
             <div className="icon-input">Price</div>
           </div>
@@ -39,9 +38,7 @@ const InputComponent: React.FC = () => {
           />
         </div>
       ) : (
-        <div className="field-price" onClick={handleFocus}>
-          $ {price}
-        </div>
+        <LabelPrice onClick={handleFocus} price={price} />
       )}
     </>
   )

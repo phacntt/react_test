@@ -8,12 +8,11 @@
   border: 2px solid black;
   border-radius: 20px;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 250px;
 }
 
 .card:hover {
@@ -24,7 +23,6 @@
 
 .thumbnail {
   border-radius: 20px;
-  width: 250px;
   height: 250px;
 }
 
